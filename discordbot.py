@@ -9,10 +9,10 @@ client = discord.Client()
 
 @client.event
 async def on_message(message):
-　　if message.author == client.user:
-　　　　return
+    if message.author == client.user:
+        return
 
-　　if message.content.startswith('$ぐえー'):
-　　　　await message.channel.send('ぐえー')
+    if message.content.startswith('$ぐえー'):
+        await message.channel.send('ぐえー')
 
 bot.run(token)
