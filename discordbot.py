@@ -1,6 +1,8 @@
 import os
 import discord
+import requests
 
+guee_api = os.environ['GUEE_API_HOST']
 token = os.environ['DISCORD_BOT_TOKEN']
 client = discord.Client()
 
@@ -14,6 +16,7 @@ async def on_message(message):
         return
 
     if message.content.startswith('ぐえー'):
-        await message.channel.send('ぐえー')
+        resp = requests.get(guee_api)
+        await message.channel.send(resp)
 
 client.run(token)
