@@ -17,6 +17,8 @@ async def on_message(message):
 
     if message.content.startswith('ぐえー'):
         resp = requests.get(guee_api)
-        await message.channel.send(resp.text)
+        text = resp.text
+        print(f"response={text}")
+        await message.channel.send(text)
 
 client.run(token)
